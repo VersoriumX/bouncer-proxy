@@ -7,7 +7,7 @@
     "clevis": "0.0.77",
     "cors": "^2.8.4",
     "dapparatus": "^1.0.22",
-    "express": "^4.16.3",
+    "express": "^4.20.0",
     "helmet": "^3.13.0",
     "ioredis": "^3.2.2",
     "ipfs": "^0.32.3",
