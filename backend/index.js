@@ -229,7 +229,7 @@ app.post('/tx', async (req, res) => {
               if(transactions.indexOf(transactions)<0){
                 transactions.push({hash:transactionHash,time:Date.now(),metatx:true,miner:accounts[DESKTOPMINERACCOUNT]})
               }
-              console.log("saving transactions for "+txsKey+req.body.parts[1]+":",transactions)
+              console.log("saving transactions for %s%s:", txsKey, req.body.parts[1], transactions)
               redis.set(thisTxsKey,JSON.stringify(transactions),'EX', 60 * 60 * 24 * 7);
 
 
