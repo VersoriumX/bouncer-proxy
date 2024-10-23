@@ -29,9 +29,14 @@ const IPFSROOMNAME = "bouncer-proxy"
 
 let backendUrl = "http://localhost:10001/"
 console.log("window.location:",window.location)
-if(window.location.href.indexOf("metatx.io")>=0)
-{
-  backendUrl = "https://backend.metatx.io/"
+try {
+  const url = new URL(window.location.href);
+  const allowedHosts = ["metatx.io", "www.metatx.io"];
+  if (allowedHosts.includes(url.host)) {
+    backendUrl = "https://backend.metatx.io/"
+  }
+} catch (e) {
+  console.error("Invalid URL:", e);
 }
 
 class App extends Component {
